@@ -9,7 +9,6 @@ st.write(
   """Choose the fruits you want in your custom Smoothie!.
   """
 )
-
 #st.write("Your favorite fruit is:", option)
 
 name_on_order = st.text_input('Name on Smoothie:')
@@ -44,7 +43,7 @@ if ingredients_list:
         #st.write('The search value for ', fruit_chosen,' is ', search_on, '.')
 
         st.subheader(fruit_chosen + ' Nutrition Information')
-        smoothiefroot_response = requests.get(f"https://my.smoothiefroot.com/api/fruit/{search_on}")
+        smoothiefroot_response = requests.get(f"https://my.smoothiefroot.com/api/fruit/{SEARCH_ON}")
         sf_df= st.dataframe(data=smoothiefroot_response.json(), use_container_width=True)
     #st.write(ingredients_string)
 
