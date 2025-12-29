@@ -9,11 +9,6 @@ st.write(
   """
 )
 
-#option = st.selectbox(
-#    "What is your favorite fruit?",
-#    ("Banana", "Strawberries", "Peaches"),
-#)
-
 #st.write("Your favorite fruit is:", option)
 
 name_on_order = st.text_input('Name on Smoothie:')
@@ -57,4 +52,8 @@ if ingredients_list:
         #st.success('Your Smoothie is ordered,', icon="✅")
         st.success(f"✅Your Smoothie is ordered, {name_on_order}!" )
 
+ # New section to display smoothiefroot nutrition information
+ import requests
+ smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
+ st.text(smoothiefroot_response)
 
